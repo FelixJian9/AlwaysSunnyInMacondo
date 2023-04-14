@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Felix Jiang">
+
+
+
+
+
+
+
+<title>博客搭建笔记 | Felix&#39;s Blog</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Roboto+Mono&display=swap');
+</style>
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/frame.js"></script>
+    
+
+
+
+
+
+
+
+
+
+
+  <meta name="generator" content="Hexo 6.3.0"></head>
+  <body>
+    <div class="mask-border">
+    </div>
+
+    <div class="wrapper">
+
+      <div class="header">
+  <div class="flex-container">
+    <div class="header-inner">
+      <div class="site-brand-container">
+        <a href="/">
+          
+            Felix.
+          
+        </a>
+      </div>
+      <div id="menu-btn" class="menu-btn" onclick="toggleMenu()">
+        Menu
+      </div>
+      <nav class="site-nav">
+        <ul class="menu-list">
+          
+            
+              <li class="menu-item">
+                <a href="/">Home</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/archives/">Archive</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/categories/gallery/">Gallery</a>
+              </li> 
+                   
+          
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main">
+        <div class="flex-container">
+          <article id="post">
+
+  
+    <div class="post-head">
+    <div class="post-info">
+        <div class="tag-list">
+            
+                
+                    <span class="post-tag">
+                        <a href="/tags/note/">
+                            note
+                        </a>
+                    </span>    
+                           
+            
+        </div>
+        <div class="post-title">
+            
+            
+                博客搭建笔记
+            
+            
+        </div>
+        <span class="post-date">
+            Apr 13, 2023
+        </span>
+    </div>
+    <div class="post-img">
+        
+            <div class="h-line-primary"></div>
+              
+    </div>
+</div>
+    <div class="post-content">
+    <h2 id="基于Hexo，Git-利用Gituhb-搭建的Blog-的流程。"><a href="#基于Hexo，Git-利用Gituhb-搭建的Blog-的流程。" class="headerlink" title="基于Hexo，Git 利用Gituhb 搭建的Blog 的流程。"></a>基于Hexo，Git 利用Gituhb 搭建的Blog 的流程。</h2><ol>
+<li>安装Node.js.以及Git</li>
+<li>Go to github, &lt;用户名&gt;.github.io，然后点击Create repository</li>
+<li>win+R 运行 cmd.exe<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建一个blog并初始化</span></span><br><span class="line">hexo init blog</span><br><span class="line"><span class="built_in">cd</span> hexo-blog</span><br><span class="line">npm install</span><br><span class="line"><span class="comment"># 本地启动</span></span><br><span class="line">hexo g</span><br><span class="line">hexo server 或 hexo s</span><br></pre></td></tr></table></figure>
+More info: <a target="_blank" rel="noopener" href="https://gcoder5.com/2023/03/16/hexo-github-namesilo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/#%E4%B8%80%E3%80%81%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C">创建一个blog</a></li>
+</ol>
+<h2 id="主题切换"><a href="#主题切换" class="headerlink" title="主题切换"></a>主题切换</h2><p>More info: <a target="_blank" rel="noopener" href="https://frame.zhangyongqi.com/about-cn/">主题切换</a></p>
+<h2 id="部署blog"><a href="#部署blog" class="headerlink" title="部署blog"></a>部署blog</h2><p>1.安装hexo-deployer-git</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>修改根目录下的 _config.yml，配置 GitHub相关信息</p>
+<blockquote>
+<p>deploy:<br>type: git<br>repo:<br>   github:<br>    url: <a target="_blank" rel="noopener" href="https://github.com/aaaa/bbb.git">https://github.com/aaaa/bbb.git</a> e.g.<a target="_blank" rel="noopener" href="https://github.com/FelixJian9/FelixJian9.github.io">https://github.com/FelixJian9/FelixJian9.github.io</a><br>        branch: main<br>        branch: main<br>   token: ‘’ #</p>
+</blockquote>
+<p>以及</p>
+<blockquote>
+<p><code># URL</code><br><code>## Set your site url here. For example, if you use GitHub Page, set url as &#39;https://username.github.io/project&#39;</code><br>url: <strong><a href="https://felixjian9.github.io/">https://FelixJian9.github.io</a></strong><br><code>permalink: :year/:month/:day/:title/</code><br><code>permalink_defaults:</code><br><code>pretty_urls</code>:<br><code>trailing_index: true # Set to false to remove trailing &#39;index.html&#39; from permalinks</code><br> <code>trailing_html: true # Set to false to remove trailing &#39;.html&#39; from permalinks</code></p>
+</blockquote>
+<p>部署命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+
+<h2 id="写作指南"><a href="#写作指南" class="headerlink" title="写作指南"></a>写作指南</h2><blockquote>
+<p>引用 </p>
+</blockquote>
+<p>使用 &gt; 在想引用行的开头</p>
+<ul>
+<li>重点</li>
+</ul>
+<p>使用 - 在想重点行的开头</p>
+<p>etc,<br>More info: <a target="_blank" rel="noopener" href="https://commonmark.org/help/tutorial/index.html">Markdown 写作指南</a></p>
+<h2 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h2><p>使用png格式，jpg格式有图片大小限制<br>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/asset-folders">插入图片</a><br>居中命令：<br><code>&lt;center&gt;</code></p>
+<h3 id="改变大小："><a href="#改变大小：" class="headerlink" title="改变大小："></a>改变大小：</h3><p>1.找到对应css文件 e.g. E:\blog\themes\frame\source\css\post\media.styl 以记事本打开<br>2. 创建图片尺寸缩放分区 e.g. 50% 缩放<br>在</p>
+<blockquote>
+<p>img<br>    width 100%<br>    height 100%</p>
+</blockquote>
+<p>后加入分区</p>
+<blockquote>
+<p>.image50<br>  img<br>    width 50%<br>    height 50%</p>
+</blockquote>
+<p>3.在blog正文写入图片的分区命令</p>
+<blockquote>
+<p><code>&lt;div class=&quot;image50&quot;&gt;</code><br>加入插入图片命令e.g. <code>&#123;% asset_img 2.jpg COVID-19test%&#125;</code><br>完成外包<code>&lt;/div&gt;</code></p>
+</blockquote>
+<p>4.完成</p>
+<h2 id="对feature图片大小进行调整"><a href="#对feature图片大小进行调整" class="headerlink" title="对feature图片大小进行调整"></a>对feature图片大小进行调整</h2><p>1.找到对应css文件 e.g. E:\blog\themes\frame\source\css\post\post_head.styl 以记事本打开<br>2.添加缩放命令在<code>  .post-img</code> 后</p>
+<blockquote>
+<pre><code>   width 50%
+    height 50%
+</code></pre>
+</blockquote>
+<p>3.完成</p>
+
+</div> 
+
+<script>
+    window.onload = detectors();
+</script>
+    <div class="post-footer">
+    <div class="h-line-primary"></div>
+    <nav class="post-nav">
+        <div class="prev-item">
+           
+                <div class="icon arrow-left"></div>
+                <div class="post-link">
+                    <a href="/2023/04/13/covid/">Prev</a>
+                </div>
+            
+        </div>
+        <div class="next-item">
+            
+                <div class="icon arrow-right"></div>
+                <div class="post-link">
+                  <a href="/2023/04/13/a/">Next</a>  
+                </div>  
+            
+        </div>
+    </nav>
+</div>
+
+    
+      <div class="post-comment">
+
+     
+
+    
+        <div id="disqus_thread"></div>
+        <script>
+            /**
+            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+            
+            var disqus_config = function () {
+                this.page.url = 'https://felixjian9.github.io/2023/04/13/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%AC%94%E8%AE%B0/';  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = '2023/04/13/博客搭建笔记/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                this.language = 'en'
+            };
+            
+            (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://felixjian9.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>   
+     
+    
+    
+
+</div>
+     
+  
+</article>
+        </div>
+      </div>
+      
+      <div class="footer">
+    <div class="flex-container">
+        <div class="footer-text">
+            
+            
+                © Felix Jiang  Since 2023 |
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">本站访客数<span id="busuanzi_value_site_uv"></span>人</span> 
+            
+                
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    
+    
+
+  </body>
+</html>
