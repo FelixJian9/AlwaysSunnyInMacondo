@@ -893,6 +893,8 @@ dl dd {
   color: #002a56;
 }
 .post-head .post-img {
+  width: 50%;
+  height: 50%;
   margin-top: 2rem;
 }
 .post-footer {
@@ -1025,7 +1027,11 @@ td {
 }
 img {
   width: 100%;
-  height: auto;
+  height: 100%;
+}
+.image50 img {
+  width: 50%;
+  height: 50%;
 }
 .video-container {
   width: 100%;
